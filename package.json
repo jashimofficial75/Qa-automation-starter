@@ -1,0 +1,42 @@
+{
+  "name": "qa-automation-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable Playwright + TypeScript starter for UI, API and security test automation",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:e2e": "playwright test --project=e2e-chromium",
+    "test:api": "playwright test --project=api",
+    "test:security": "playwright test --project=security",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:cross-browser": "cross-env CROSS_BROWSER=1 playwright test",
+    "test:headed": "playwright test --project=e2e-chromium --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:flaky-check": "playwright test --repeat-each=5 --workers=4",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run typecheck && npm run lint && npm run format:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-playwright": "^2.12.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.50.0",
+    "zod": "^4.0.0"
+  }
+}
